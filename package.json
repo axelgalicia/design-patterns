@@ -1,0 +1,25 @@
+{
+  "name": "design-patterns",
+  "version": "1.0.0",
+  "description": "Implementing design patterns in Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axelgalicia/design-patterns.git"
+  },
+  "keywords": [
+    "design",
+    "patterns"
+  ],
+  "author": "Axel Galicia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axelgalicia/design-patterns/issues"
+  },
+  "homepage": "https://github.com/axelgalicia/design-patterns#readme",
+  "dependencies": {
+  }
+}
