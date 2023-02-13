@@ -1,20 +1,17 @@
 import { Radio } from './Radio';
 import { RadioState } from './RadioState';
 import { RadioStateOff } from './RadioStateOff';
-import { RadioStateTunned } from './RadioStateTunned';
 
-export class RadioStateOn implements RadioState {
+export class RadioStateTunned implements RadioState {
+
+    private station: number;
 
     constructor(private radio: Radio) {
         this.radio = radio;
     }
 
     turnOn(): void {
-        if (this.radio.getState() === this) {
-            console.log('Radio is already On');
-        } else {
-            console.log('Turning Radio On');
-        }
+        console.log('Radio is already on');
     }
 
     turnOff(): void {
@@ -23,7 +20,11 @@ export class RadioStateOn implements RadioState {
     }
 
     tuneInStation(station: number): void {
-        this.radio.changeState(new RadioStateTunned(this.radio));
-        this.radio.tuneInStation(station);
+        if (this.station === station) {
+            console.log(`Already tunned in ${station} station`);
+        } else {
+            console.log(`Tunning Radio to ${station} station`);
+            this.station = station;
+        }
     }
 }

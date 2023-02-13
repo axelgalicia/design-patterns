@@ -1,20 +1,32 @@
 import { RadioState } from './RadioState';
+import { RadioStateOff } from './RadioStateOff';
 
 export class Radio {
 
     private state: RadioState;
 
-    constructor(state: RadioState) { 
-        this.state = state;
-        state.setRadio(this);
+    constructor() {
+        this.state = new RadioStateOff(this);
     }
 
-    turnOn() {
+    turnOn(): void {
         this.state.turnOn();
     };
-    
-    turnOff() {
+
+    turnOff(): void {
         this.state.turnOff();
     };
+
+    tuneInStation(station: number): void {
+        this.state.tuneInStation(station);
+    }
+
+    changeState(state: RadioState) {
+        this.state = state;
+    }
+
+    getState(): RadioState {
+        return this.state;
+    }
 
 }
